@@ -1,29 +1,15 @@
-# —— 渲染产物（太大，可用 代码/render.cjs 重新生成）——
+# —— 渲染好的视频（用 代码/render.cjs 重新渲染）——
 成片/
 */成片/
+
+# —— 渲染过程的临时文件 ——
 _frames/
 */_frames/
 _snap/
 */代码/_snap/
+*/代码/node_modules/
 
-# —— 老影像抽帧（可用 _gen/extract_footage.py 重新生成）——
-*/素材/footage_frames/
-
-# —— 授权不允许公开再分发的素材（本地保留，见 README「素材授权」）——
-# 诺贝尔官方肖像插画：仅限编辑用途，2026-12-31 前
-*/素材/photos/nobel_ill_*.jpg
-# 非商业授权 / 来源不明的照片
-*/素材/photos/soai_2008_flickr_viedma.jpg
-*/素材/photos/soai_commons_pegy22_unverified.jpg
-# 第三方作品（风格参考图）
-*/参考图/
-# 授权字段缺失 / 可能是 CC BY-SA 的老影像
-*/素材/footage/04_pharma_packaging_line.mp4
-*/素材/footage/40_hospital_patient_bed.mp4
-# 没有内嵌授权信息的字体
-*/代码/fonts/AlibabaPuHuiTi-2-85-Bold.otf
-
-# —— Codex 生图的运行日志 ——
+# —— Codex 生图的运行日志（渲染用不到）——
 */_gen/*.log
 
 .DS_Store

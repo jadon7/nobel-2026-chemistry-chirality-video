@@ -23,38 +23,34 @@
 
 ## 重新渲染
 
-需要：Node.js、Google Chrome、ffmpeg（`/opt/homebrew/bin/ffmpeg`）、Python 3。
+需要：Node.js、Google Chrome、ffmpeg（`/opt/homebrew/bin/ffmpeg`）、Python 3。仓库里已经带了老影像抽帧、照片、字体等全部渲染资源，克隆下来可以直接渲染。
 
 ```bash
 cd 02-全片/代码
 npm i playwright-core
-python3 -I ../_gen/extract_footage.py   # 先把老影像抽成帧（仓库里没放抽帧）
 node render.cjs                          # 约 25–30 分钟 → ../成片/全片.mp4 和 全片_旁白版.mp4
 node render.cjs --snap 66,128            # 只截几帧看效果
 ```
 
 浏览器里直接看某一帧：在 `02-全片/` 起一个静态服务器，打开 `代码/index.html?ts=1&t=128`。
 
-重新配旁白需要 OpenRouter 的 key（环境变量 `OR_KEY`），仓库里没有任何密钥。
+改了老影像的入点/出点（`_gen/footage_cut.json`）后，运行 `python3 -I _gen/extract_footage.py` 重新抽帧。重新配旁白需要 OpenRouter 的 key（环境变量 `OR_KEY`），仓库里没有任何密钥。
 
-## 仓库里没有的东西
-
-| 没放进来的 | 原因 | 怎么补 |
-|---|---|---|
-| 成片 mp4 | 单个约 1 GB，超过 GitHub 限制 | `node render.cjs` 重新渲染 |
-| `素材/footage_frames/` | 抽帧，可以重新生成 | `python3 -I _gen/extract_footage.py` |
-| 诺贝尔官方肖像插画（`nobel_ill_*.jpg`） | Nobel Prize Outreach 只允许编辑用途（报道获奖），2026-12-31 前有效，不能公开再分发 | 从 [nobelprize.org](https://www.nobelprize.org/prizes/chemistry/2026/summary/) 下载，放进 `02-全片/素材/photos/`；缺这几张时，第 10、24、28 句会退回不带肖像的画面 |
-| 硤合 2008 年合影、来源不明的头像 | 非商业授权 / 授权存疑（视频里也没用） | — |
-| `参考图/` | 第三方杂志封面和插画，只用作风格参考 | — |
-| `04_pharma_packaging_line.mp4` | archive.org 条目没写授权 | 见 `素材/footage/manifest.json` 里的链接，下载后放回原处 |
-| `AlibabaPuHuiTi-2-85-Bold.otf` | 字体文件里没有授权说明（代码里也没实际用到） | — |
+仓库里**只有渲染好的视频没放**（`成片/`，单个约 1 GB），用 `node render.cjs` 重新渲染即可。
 
 ## 素材授权
+
+内部制作用，以下授权情况供发布前统一处理时参考（逐项原文见 `02-全片/说明.md`、`素材/photos/manifest.json`、`素材/footage/manifest*.json`）：
+
 
 - **老影像**：来自 [movingimagearchive.com](https://www.movingimagearchive.com/)（标注公有领域）和 archive.org Prelinger 馆藏（公有领域），逐段来源见 `素材/footage/manifest*.json`。
 - **卡根照片** `kagan_2013_commons*.jpg`：École polytechnique / Flickr，CC BY-SA 2.0。
 - **首相官邸视频和照片**（`41_kantei_pm_call_soai_2026.mp4`、`kantei_*.jpg`）：首相官邸网站，适用政府标准利用规约 PDL1.0（与 CC BY 4.0 兼容），使用时需注明「出典：首相官邸ホームページ」，加工后注明「を加工して作成」。
 - **分子构象**：PubChem（CID 75792、11744819、10911429）。
-- **字体**：思源宋体、Bebas Neue、ChillDuanSans 均为 SIL Open Font License 1.1。
+- **诺贝尔官方肖像插画**（`nobel_ill_*.jpg`）：Nobel Prize Outreach，仅限编辑用途，2026-12-31 前有效，署名 Ill. Niklas Elmehed © Nobel Prize Outreach。
+- **硤合 2008 年合影**（`soai_2008_flickr_viedma.jpg`）：CC BY-NC-SA 2.0（非商业）；`soai_commons_pegy22_unverified.jpg` 授权存疑。两张视频里都没用。
+- **`04_pharma_packaging_line.mp4`**：archive.org Prelinger 馆藏，条目没写授权；`40_hospital_patient_bed.mp4` 来自 openbeelden.nl，可能是 CC BY-SA（视频里没用）。
+- **`参考图/`**：第三方杂志封面和插画，只作风格参考，不出现在视频里。
+- **字体**：思源宋体、Bebas Neue、ChillDuanSans 为 SIL Open Font License 1.1；阿里巴巴普惠体文件里没有授权说明（代码里声明了但没实际用到）。
 - **插画**（`素材/ai/`）：用 Codex 内置 imagegen 生成。
 - **旁白**（`素材/tts/`）：Gemini 3.8 Flash TTS 生成。
