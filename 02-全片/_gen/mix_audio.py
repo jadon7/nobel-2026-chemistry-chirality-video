@@ -4,7 +4,7 @@
 import numpy as np, wave, json, os
 P = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SR = 48000
-BGM_GAIN_DB = -11.0     # 配乐整体（原曲母带很响，约 -10 LUFS）
+BGM_GAIN_DB = -7.0      # 配乐整体（原曲母带很响，约 -10 LUFS）；10-12 按要求调大 4 dB（原 -11）
 DUCK_DB = -8.0          # 旁白时再压低
 RAMP = .3
 def rd(p):
@@ -25,7 +25,7 @@ k = int(RAMP * SR); c = np.cumsum(np.concatenate([[0], duck])); sm = (c[k:] - c[
 sm = np.roll(sm, -k // 2)
 gain = 10 ** ((BGM_GAIN_DB + DUCK_DB * sm) / 20)
 mix = bgm * gain[:, None] + vo[:, None]
-only = bgm * 10 ** (BGM_GAIN_DB / 20)
+only = bgm * 10 ** (-11.0 / 20)    # 纯配乐版只看响度标准化，这个值不影响结果
 def wr(p, y):
     pk = np.abs(y).max(); y = y / max(1.0, pk / .98)
     with wave.open(p, 'wb') as o: o.setnchannels(2); o.setsampwidth(2); o.setframerate(SR); o.writeframes((y * 32767).astype(np.int16).tobytes())
