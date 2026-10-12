@@ -36,7 +36,9 @@ node render.cjs --snap 66,128            # 只截几帧看效果
 
 改了老影像的入点/出点（`_gen/footage_cut.json`）后，运行 `python3 -I _gen/extract_footage.py` 重新抽帧。重新配旁白需要 OpenRouter 的 key（环境变量 `OR_KEY`），仓库里没有任何密钥。
 
-仓库里**只有渲染好的视频没放**（`成片/`，单个约 1 GB），用 `node render.cjs` 重新渲染即可。
+配乐版和纯配乐版：渲染出无声的 `成片/全片.mp4` 后，在 `02-全片/` 下依次运行 `python3 _gen/build_music.py`（铺配乐）、`python3 _gen/mix_audio.py`（混音）、`python3 _gen/mux_final.py`（响度标准化并合成 `全片_配乐旁白版.mp4`、`全片_纯配乐版.mp4`）。
+
+仓库里**只有渲染好的视频和混音成品没放**（`成片/`，单个约 1 GB），按上面步骤重新生成即可。
 
 ## 素材授权
 
@@ -54,3 +56,4 @@ node render.cjs --snap 66,128            # 只截几帧看效果
 - **字体**：思源宋体、Bebas Neue、ChillDuanSans 为 SIL Open Font License 1.1；阿里巴巴普惠体文件里没有授权说明（代码里声明了但没实际用到）。
 - **插画**（`素材/ai/`）：用 Codex 内置 imagegen 生成。
 - **旁白**（`素材/tts/`）：Gemini 3.8 Flash TTS 生成。
+- **配乐**（`素材/music/`）：和乐府《千年之后（氛围版）》，取自抖音视频 https://v.douyin.com/FJfoNAKmbgs/ 的音轨。

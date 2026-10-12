@@ -2,6 +2,9 @@
 成片/
 */成片/
 
+# —— 混音成品（_gen/mix_audio.py 生成）——
+*/素材/music/mix_*.wav
+
 # —— 渲染过程的临时文件 ——
 _frames/
 */_frames/
