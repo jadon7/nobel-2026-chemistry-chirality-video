@@ -1,0 +1,116 @@
+{
+ "pharmacy": [
+  "01_pharmacist_pouring_bottle_hq.mp4",
+  0.0,
+  9.6,
+  "crop=640:476:0:2"
+ ],
+ "pregnant": [
+  "06_pregnant_woman_doorway.mp4",
+  1.0,
+  10.0,
+  "crop=1440:1080:238:0"
+ ],
+ "nursery": [
+  "07_hospital_ward_cribs.mp4",
+  15.0,
+  25.6,
+  ""
+ ],
+ "factory": [
+  "04_pharma_packaging_line.mp4",
+  0.0,
+  8.0,
+  "crop=636:472:2:0"
+ ],
+ "chemist": [
+  "17_chemist_pouring_flask_hq.mp4",
+  3.2,
+  11.5,
+  "crop=630:472:6:0"
+ ],
+ "hands_ft": [
+  "16_two_hands_closeup.mp4",
+  0.0,
+  2.04,
+  ""
+ ],
+ "stockholm": [
+  "20_stockholm_waterfront_hq.mp4",
+  0.0,
+  7.8,
+  "crop=346:480:4:0,scale=640:480,setsar=1"
+ ],
+ "lab80s": [
+  "21_lab_chemist_glassware_1975.mp4",
+  0.0,
+  7.5,
+  "crop=628:476:6:2,scale=640:480,setsar=1"
+ ],
+ "lab80s_b": [
+  "23_chemist_dropper_flasks_1973.mp4",
+  2.0,
+  8.38,
+  "crop=628:476:6:2,scale=640:480,setsar=1"
+ ],
+ "drip": [
+  "24_dropper_drip_dish.mp4",
+  0.0,
+  4.4,
+  "crop=628:476:6:2,scale=640:480,setsar=1"
+ ],
+ "assembly": [
+  "27_toasters_assembly_line.mp4",
+  0.0,
+  16.6,
+  ""
+ ],
+ "recorder": [
+  "32_recorder_pen_trace.mp4",
+  0.0,
+  2.9,
+  "crop=628:476:6:2,scale=640:480,setsar=1"
+ ],
+ "plotter": [
+  "33_xy_plotter_curve.mp4",
+  0.0,
+  3.9,
+  "crop=628:476:6:2,scale=640:480,setsar=1"
+ ],
+ "journal_ft": [
+  "34_journal_references.mp4",
+  0.0,
+  12.0,
+  ""
+ ],
+ "tweezers_ft": [
+  "37_tweezers_tiny_jewel.mp4",
+  26.0,
+  45.0,
+  ""
+ ],
+ "cells": [
+  "39_microscope_cells.mp4",
+  0.0,
+  14.0,
+  ""
+ ],
+ "flasks_col": [
+  "22_lab_colored_flasks.mp4",
+  0.0,
+  5.07,
+  "crop=628:476:6:2,scale=640:480,setsar=1"
+ ],
+ "robots1990": [
+  "28_robot_welding_car_body.mp4",
+  0.0,
+  10.9,
+  "crop=628:476:6:2,scale=640:480,setsar=1"
+ ],
+ "kantei": [
+  "41_kantei_pm_call_soai_2026.mp4",
+  0.0,
+  12.0,
+  ""
+ ]
+}

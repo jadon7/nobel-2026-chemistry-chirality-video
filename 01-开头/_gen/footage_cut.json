@@ -1,0 +1,44 @@
+{
+ "pharmacy": [
+  "01_pharmacist_pouring_bottle_hq.mp4",
+  0.0,
+  9.6,
+  "crop=640:476:0:2"
+ ],
+ "pregnant": [
+  "06_pregnant_woman_doorway.mp4",
+  1.0,
+  10.0,
+  "crop=1440:1080:238:0"
+ ],
+ "nursery": [
+  "07_hospital_ward_cribs.mp4",
+  15.0,
+  25.6,
+  ""
+ ],
+ "factory": [
+  "04_pharma_packaging_line.mp4",
+  0.0,
+  8.0,
+  "crop=636:472:2:0"
+ ],
+ "chemist": [
+  "17_chemist_pouring_flask_hq.mp4",
+  3.2,
+  11.5,
+  "crop=630:472:6:0"
+ ],
+ "hands_ft": [
+  "16_two_hands_closeup.mp4",
+  0.0,
+  2.04,
+  ""
+ ],
+ "stockholm": [
+  "20_stockholm_waterfront_hq.mp4",
+  0.0,
+  7.8,
+  "crop=346:480:4:0,scale=640:480,setsar=1"
+ ]
+}
